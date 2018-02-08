@@ -29,7 +29,6 @@
                <% if user_signed_in? %>
                  
                  <% if current_user.admin? %>
-                 
                  <li class="nav-item">
                     <%= link_to "Logged in as (Admin) #{current_user.email}", edit_user_registration_path, :class => 'nav-link'  %>
                 </li>
@@ -69,6 +68,19 @@
 
 
 
+
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to TickIT!</h1>
+  <p class="lead">This is a simple tickiting system app.</p>
+  <hr class="my-4">
+  <% if not user_signed_in? %>
+  <p>We see you're not logged in, login or create an account to get started!</p>
+  <p class="lead">
+    <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
+   <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg'  %>
+  </p>
+    <%end%>
+</div>
 
 
 
