@@ -79,6 +79,9 @@
     <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
    <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg'  %>
   </p>
+  <%else%>
+  <button type="button" class="btn btn-success">Create a ticket</button>
+  <button type="button" class="btn btn-info">View my tickets</button>
     <%end%>
 </div>
 
