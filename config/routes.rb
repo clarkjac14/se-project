@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'create_ticket/new'
+
   get 'admin_panel/panel_home'
 
   get 'allusers/new' => 'allusers_new_path'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   get 'allusers/create'
 
   get 'index'  => 'home#new'
+  
+  get 'create_ticket' => 'create_ticket#new'
 
   get 'home/create'
 
