@@ -1,0 +1,2 @@
+module AllusersHelper
+end
