@@ -11,12 +11,33 @@
   </head>
   <body>
     
-    
+    <style>
+  #homeCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center
+  
+  }
+  #btnPad {
+    margin: 10px;
+  }
+</style>
+
+
+
+
+
+
     
     
 
     <div class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
+        <a href="../" class="navbar-brand">
+            <div id="btnPad">
+        <img src="https://i.imgur.com/1PkUVKB.png" width="120" height="62" alt="Computer Hope">
+            </div>
+        </a>
         <a href="../" class="navbar-brand">TickIT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,22 +88,32 @@
     </div>
 
 
-
+<div id="homeCenter">
 
 <div class="jumbotron">
   <h1 class="display-3">Welcome to TickIT!</h1>
-  <p class="lead">This is a simple tickiting system app.</p>
+  <p class="lead text-center">This is a simple ticketing system app.</p>
   <hr class="my-4">
   <% if not user_signed_in? %>
-  <p>We see you're not logged in, login or create an account to get started!</p>
+   <p class="lead text-center">We see you're not logged in, login or create an account to get started!</p>
   <p class="lead">
+  <div id="homeCenter">
+    <div id="btnPad">
     <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
    <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg'  %>
+       </div>
+    </div>
   </p>
   <%else%>
+  <div id="homeCenter">
+    <div id="btnPad">
     <%= link_to "Create a ticket", "create_ticket", :class => 'btn btn-success btn-lg'  %>
     <%= link_to "View my tickets", "create_ticket", :class => 'btn btn-info btn-lg'  %>
+    </div>
+    </div>
     <%end%>
+</div>
+
 </div>
 
 
