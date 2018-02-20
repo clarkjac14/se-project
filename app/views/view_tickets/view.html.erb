@@ -25,12 +25,6 @@
 
 
 
-
-
-
-    
-    
-
     <div class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
         <a href="../" class="navbar-brand">
@@ -86,41 +80,9 @@
         </div>
       </div>
     </div>
-
-
-<div id="homeCenter">
-
-<div class="jumbotron">
-  <h1 class="display-3">Welcome to TickIT!</h1>
-  <p class="lead text-center">This is a simple ticketing system app.</p>
-  <hr class="my-4">
-  <% if not user_signed_in? %>
-   <p class="lead text-center">We see you're not logged in, login or create an account to get started!</p>
-  <p class="lead">
-  <div id="homeCenter">
-    <div id="btnPad">
-    <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary btn-lg'  %>
-   <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg'  %>
-       </div>
-    </div>
-  </p>
-  <%else%>
-  <div id="homeCenter">
-    <div id="btnPad">
-    <%= link_to "Create a ticket", "create_ticket", :class => 'btn btn-success btn-lg'  %>
-    <%= link_to "View my tickets", "view_tickets", :class => 'btn btn-info btn-lg'  %>
-    </div>
-    </div>
-    <%end%>
+    
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">No Tickets!</h4>
+  <p class="mb-0">You currently have no active tickets, <a href="create_ticket" class="alert-link">click here to create one!</a>.</p>
 </div>
-
-</div>
-
-
-
-    <script src="../_vendor/jquery/dist/jquery.min.js"></script>
-    <script src="../_vendor/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../_assets/js/custom.js"></script>
-  </body>
-</html>

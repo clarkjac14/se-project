@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'view_tickets/view'
+
   get 'create_ticket/new'
 
   get 'admin_panel/panel_home'
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   get 'index'  => 'home#new'
   
   get 'create_ticket' => 'create_ticket#new'
+  
+  get 'view_tickets' => 'view_tickets#view'
 
   get 'home/create'
 
