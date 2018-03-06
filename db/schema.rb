@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206140750) do
+ActiveRecord::Schema.define(version: 20180227151552) do
+
+  create_table "available_locs", force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "user"
+    t.string "location"
+    t.string "head"
+    t.string "body"
+    t.string "filename"
+    t.integer "priority"
+    t.datetime "created"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

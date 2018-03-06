@@ -1,0 +1,22 @@
+<%= form_with(model: available_loc, local: true) do |form| %>
+  <% if available_loc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(available_loc.errors.count, "error") %> prohibited this available_loc from being saved:</h2>
+
+      <ul>
+      <% available_loc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :label %>
+    <%= form.text_field :label, id: :available_loc_label %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

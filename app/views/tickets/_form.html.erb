@@ -1,0 +1,68 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <h3>Create a new ticket</h3>
+
+<div class="row">
+  <div class="col-md-4">
+    
+  <div class="textarea">
+    <%= form.label :location %>
+  
+  </div>
+  <div class="form-group">
+  <%= form.select :location, {}, {}, {class: 'form-control'} do %>
+    <% @available_locs.each do |available_loc| %>
+      #<%= content_tag :option, available_loc.label %>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="textarea">
+    <%= form.label :head, 'Ticket Heading' %>
+    <%= form.text_field :head, id: :ticket_head, :class => 'form-control' %>
+  </div>
+
+  <div class="textarea">
+    <%= form.label :body, 'Ticket Body' %>
+    <%= form.text_field :body, id: :ticket_body, :class => 'form-control' %>
+  </div>
+
+
+<% if false %>
+  <div class="textarea">
+    <%= form.label :filename %>
+    <%= form.text_field :filename, id: :ticket_filename, :class => 'form-control' %>
+  </div>
+<%end%>
+  
+  <legend>Priority Level</legend>
+  <div class="field">
+    <%= form.radio_button :priority, 1 %>
+    <%= form.label :priority, "High Priority", :value => 1, :class => 'badge badge-pill badge-danger' %>
+  </div>
+  <div class="field">
+    <%= form.radio_button :priority, 2, :checked => true %>
+    <%= form.label :priority, "Medium Priority", :value => 2,  :class => 'badge badge-pill badge-warning' %>
+  </div>
+  <div class="field">
+    <%= form.radio_button :priority, 3, :checked => true %>
+    <%= form.label :priority, "Low Priority", :value => 3,  :class => 'badge badge-pill badge-success' %>
+  </div>
+  <div class="actions">
+    <%= form.submit :class => 'btn btn-primary' %>
+  </div>
+  
+  </div>
+</div>
+<% end %>

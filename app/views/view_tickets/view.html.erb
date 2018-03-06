@@ -81,8 +81,34 @@
       </div>
     </div>
     
-<div class="alert alert-dismissible alert-warning">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <h4 class="alert-heading">No Tickets!</h4>
-  <p class="mb-0">You currently have no active tickets, <a href="create_ticket" class="alert-link">click here to create one!</a>.</p>
-</div>
+  
+  <% if user_signed_in? %>
+                
+                    <tbody>
+                    <% @tickets.each do |ticket| %>
+                     <tr>
+                      <p>
+                      <% if current_user.email == ticket.user %>
+                      <td><%= ticket.user %></td>
+                      
+                      <% @displayed = true %>
+                      
+                      <td> <%= ticket.location %></td>
+                      </p>
+                      <% end %>
+                     <% end %>
+                      
+                  </tr>
+                   </tbody>
+                   
+  <% if !@displayed %>
+    <div class="alert alert-dismissible alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="alert-heading">No Tickets!</h4>
+      <p class="mb-0">You currently have no active tickets, <a href="create_ticket" class="alert-link">click here to create one!</a>.</p>
+    </div>
+  <% end %>
+                 
+                
+<% end %>
+  

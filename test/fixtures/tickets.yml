@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  location: MyString
+  head: MyString
+  body: MyString
+  filename: MyString
+  priority: 1
+  created: 2018-02-27 14:14:47
+
+two:
+  user: MyString
+  location: MyString
+  head: MyString
+  body: MyString
+  filename: MyString
+  priority: 1
+  created: 2018-02-27 14:14:47

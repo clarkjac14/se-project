@@ -1,0 +1,2 @@
+class AvailableLoc < ApplicationRecord
+end

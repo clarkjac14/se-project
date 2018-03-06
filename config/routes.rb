@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
+  resources :available_locs
+  resources :tickets
   get 'view_tickets/view'
 
   get 'create_ticket/new'
-
-  get 'admin_panel/panel_home'
 
   get 'allusers/new' => 'allusers_new_path'
 
   get 'allusers' => 'allusers#new'
   
-  get 'adminpanel' => 'admin_panel#panel_home'
+  get '/adminpanel' => 'admin_panel#panel_home'
 
   get 'allusers/create'
 
