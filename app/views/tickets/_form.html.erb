@@ -21,10 +21,15 @@
   
   </div>
   <div class="form-group">
-  <%= form.select :location, {}, {}, {class: 'form-control'} do %>
-    <% @available_locs.each do |available_loc| %>
+    <% if @available_locs.any? %>
+      <%= form.select :location, {}, {}, {class: 'form-control'} do %>
+      <% @available_locs.each do |available_loc| %>
       #<%= content_tag :option, available_loc.label %>
     <% end %>
+      <% end %>
+    <% else %>
+      <select class="form-control" id="empty">
+      </select>
   <% end %>
   </div>
 
