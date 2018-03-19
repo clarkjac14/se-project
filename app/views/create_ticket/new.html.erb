@@ -8,12 +8,8 @@
     <link rel="stylesheet" href="../4/lux/bootstrap.css" media="screen">
     <link rel="stylesheet" href="../_assets/css/custom.min.css">
   </head>
+  
   <body>
-    
-    
-    
-    
-
     <div class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
         <a href="../" class="navbar-brand">
@@ -54,11 +50,7 @@
                     <%= link_to "Logout", users_sign_out_path, :class => 'nav-link',:method => :delete  %>
                 </li>
                 <% end %>
-             
-             
-
           </ul>
-
         </div>
       </div>
     </div>
@@ -66,11 +58,11 @@
 
 
 
-<div class="row">
-  <div class="col-md-4">
-<form>
-  <fieldset>
-    <h3>Create a new ticket</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+      <fieldset>
+      <h3>Create a new ticket</h3>
     <div class="form-group">
       <label for="locationSelect">Select a location</label>
       <select class="form-control" id="locationSelect">
@@ -92,29 +84,29 @@
       <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Upload a file displaying the current problem being dealt with.</small>
     </div>
-    <fieldset class="form-group">
-      <legend>Priority Level</legend>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-          <span class="badge badge-pill badge-success">Low Priority</span>
-        </label>
-      </div>
-      <div class="form-check">
+      <fieldset class="form-group">
+        <legend>Priority Level</legend>
+    <div class="form-check">
       <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-          <span class="badge badge-pill badge-warning">Medium Priority</span>
-        </label>
-      </div>
-      <div class="form-check disabled">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        <span class="badge badge-pill badge-success">Low Priority</span>
+      </label>
+    </div>
+    <div class="form-check">
       <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-          <span class="badge badge-pill badge-danger">High Priority</span>
-        </label>
-      </div>
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </fieldset>
-</form>
-</div>
-</div>
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        <span class="badge badge-pill badge-warning">Medium Priority</span>
+      </label>
+    </div>
+    <div class="form-check disabled">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+        <span class="badge badge-pill badge-danger">High Priority</span>
+      </label>
+    </div>
+      </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+      </form>
+    </div>
+  </div>

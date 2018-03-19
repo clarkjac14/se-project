@@ -1,62 +1,54 @@
-  <body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a href="../" class="navbar-brand">
-            <div id="btnPad">
-        <img src="https://i.imgur.com/1PkUVKB.png" width="120" height="62" alt="Computer Hope">
+<body>
+  <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a href="../" class="navbar-brand">
+          <div id="btnPad">
+      <img src="https://i.imgur.com/1PkUVKB.png" width="120" height="62" alt="Computer Hope">
+          </div>
+      </a>
+      <a href="../" class="navbar-brand">TickIT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu" aria-labelledby="download">
+              <a class="dropdown-item" href="https://jsfiddle.net/bootswatch/8zet8yhz/">Open in JSFiddle</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../4/lux/bootstrap.min.css">bootstrap.min.css</a>
+              <a class="dropdown-item" href="../4/lux/bootstrap.css">bootstrap.css</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../4/lux/_variables.scss">_variables.scss</a>
+              <a class="dropdown-item" href="../4/lux/_bootswatch.scss">_bootswatch.scss</a>
             </div>
-        </a>
-        <a href="../" class="navbar-brand">TickIT</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-             
-            <li class="nav-item dropdown">
-              <div class="dropdown-menu" aria-labelledby="download">
-                <a class="dropdown-item" href="https://jsfiddle.net/bootswatch/8zet8yhz/">Open in JSFiddle</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../4/lux/bootstrap.min.css">bootstrap.min.css</a>
-                <a class="dropdown-item" href="../4/lux/bootstrap.css">bootstrap.css</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../4/lux/_variables.scss">_variables.scss</a>
-                <a class="dropdown-item" href="../4/lux/_bootswatch.scss">_bootswatch.scss</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
 
 
 <% if user_signed_in? %>
-                 
-                 <% if current_user.admin? %>
-                 
-                <h2> Welcome, admin</h2>
-                 
-                    <tbody>
-                    <% @users.each do |user| %>
-                     <tr>
-                         <p>
-                      <td><%= user.name %></td>
-                      <td> <%= user.email %></td>
-                      <td>Admin? <%= user.admin %></td>
-                      <td><%= link_to 'Edit', edit_user_password_path(user) %></td>
-                      </p>
-                     <% end %>
-                         <%= link_to "View All Tickets", "tickets", :class => 'btn btn-success btn-lg'  %>
-                    </tr>
-                   </tbody>
-                 
-                 
-                 
-                 <% else %>
-                 
-                 <h2>Error, not an admin.</h2>
-                 
-                 <% end %>
-                
+<% if current_user.admin? %>
+
+<h2> Welcome, admin</h2>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <p>
+          <td><%= user.name %></td>
+          <td> <%= user.email %></td>
+          <td>Admin? <%= user.admin %></td>
+          <td><%= link_to 'Edit', edit_user_password_path(user) %></td>
+        </p>
+        <% end %>
+        <%= link_to "View All Tickets", "tickets", :class => 'btn btn-success btn-lg'  %>
+      </tr>
+    </tbody>
+      <% else %>
+        <h2>Error, not an admin.</h2>
+  <% end %>
 <% end %>
