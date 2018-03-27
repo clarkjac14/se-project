@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   get 'index'  => 'home#new'
   
-  get 'create_ticket' => 'create_ticket#new'
+  #get 'create_ticket' => 'create_ticket#new'
+  
+  get 'create_ticket' => 'tickets#new'
   
   get 'view_tickets' => 'view_tickets#view'
 

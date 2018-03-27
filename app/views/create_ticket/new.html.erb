@@ -8,18 +8,14 @@
     <link rel="stylesheet" href="../4/lux/bootstrap.css" media="screen">
     <link rel="stylesheet" href="../_assets/css/custom.min.css">
   </head>
+  
   <body>
-    
-    
-    
-    
-
     <div class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
         <a href="../" class="navbar-brand">
-            <div id="btnPad">
+          <div id="btnPad">
         <img src="https://i.imgur.com/1PkUVKB.png" width="120" height="62" alt="Computer Hope">
-            </div>
+          </div>
         </a>
         <a href="../" class="navbar-brand">TickIT</a>
 
@@ -31,46 +27,34 @@
           </ul>
 
           <ul class="nav navbar-nav ml-auto">
-               <% if user_signed_in? %>
-                 
-                 <% if current_user.admin? %>
-                 <li class="nav-item">
-                    <%= link_to "Logged in as (Admin) #{current_user.email}", edit_user_registration_path, :class => 'nav-link'  %>
-                </li>
-                
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
                 <li class="nav-item">
-                    <%= link_to "Admin Panel", "adminpanel", :class => 'nav-link'  %>
+                  <%= link_to "Logged in as (Admin) #{current_user.email}", edit_user_registration_path, :class => 'nav-link'  %>
                 </li>
-                 
-                 <% else %>
-                 
                 <li class="nav-item">
-                   <%= link_to "Logged in as #{current_user.email}", edit_user_registration_path, :class => 'nav-link'  %>
+                  <%= link_to "Admin Panel", "adminpanel", :class => 'nav-link'  %>
                 </li>
-                
-                <% end %>
-                
+                <% else %>
                 <li class="nav-item">
-                    <%= link_to "Logout", users_sign_out_path, :class => 'nav-link',:method => :delete  %>
+                  <%= link_to "Logged in as #{current_user.email}", edit_user_registration_path, :class => 'nav-link'  %>
                 </li>
-                <% end %>
-             
-             
-
+            <% end %>
+                
+            <li class="nav-item">
+              <%= link_to "Logout", users_sign_out_path, :class => 'nav-link',:method => :delete  %>
+            </li>
+            <% end %>
           </ul>
-
         </div>
       </div>
     </div>
 
-
-
-
-<div class="row">
-  <div class="col-md-4">
-<form>
-  <fieldset>
-    <h3>Create a new ticket</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+      <fieldset>
+      <h3>Create a new ticket</h3>
     <div class="form-group">
       <label for="locationSelect">Select a location</label>
       <select class="form-control" id="locationSelect">
@@ -92,29 +76,29 @@
       <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Upload a file displaying the current problem being dealt with.</small>
     </div>
-    <fieldset class="form-group">
-      <legend>Priority Level</legend>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-          <span class="badge badge-pill badge-success">Low Priority</span>
-        </label>
-      </div>
-      <div class="form-check">
+      <fieldset class="form-group">
+        <legend>Priority Level</legend>
+    <div class="form-check">
       <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-          <span class="badge badge-pill badge-warning">Medium Priority</span>
-        </label>
-      </div>
-      <div class="form-check disabled">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        <span class="badge badge-pill badge-success">Low Priority</span>
+      </label>
+    </div>
+    <div class="form-check">
       <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-          <span class="badge badge-pill badge-danger">High Priority</span>
-        </label>
-      </div>
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </fieldset>
-</form>
-</div>
-</div>
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        <span class="badge badge-pill badge-warning">Medium Priority</span>
+      </label>
+    </div>
+    <div class="form-check disabled">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+        <span class="badge badge-pill badge-danger">High Priority</span>
+      </label>
+    </div>
+      </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+      </form>
+    </div>
+  </div>
